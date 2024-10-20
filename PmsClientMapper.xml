@@ -1,0 +1,153 @@
+<mapper namespace="com.nodeam.common.mapper.ops.PmsClientMapper">
+
+    <resultMap type="PmsClient" id="PmsClientResult">
+        <result property="clientId"    column="client_id"    />
+        <result property="clientName"    column="client_name"    />
+        <result property="clientType"    column="client_type"    />
+        <result property="accountNumber"    column="account_number"    />
+        <result property="contactPerson"    column="contact_person"    />
+        <result property="jobTitle"    column="job_title"    />
+        <result property="address"    column="address"    />
+        <result property="telephone"    column="telephone"    />
+        <result property="mobile"    column="mobile"    />
+        <result property="email"    column="email"    />
+        <result property="fax"    column="fax"    />
+        <result property="website"    column="website"    />
+        <result property="clientStatus"    column="client_status"    />
+        <result property="sourceBelongTo"    column="source_belong_to"    />
+        <result property="belongTo"    column="belong_to"    />
+
+        <result property="amlRisk"    column="aml_risk"    />
+        <result property="isPEP"    column="is_pep"    />
+        <result property="vulnerableStatus"    column="vulnerable_status"    />
+
+        <result property="trasferDate"    column="trasfer_date"    />
+        <result property="trasferTo"    column="trasfer_to"    />
+        <result property="delFlag"    column="del_flag"    />
+        <result property="belongToTenantId"    column="belong_to_tenant_id"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+
+        <result property="dob"    column="dob"    />
+        <result property="country"    column="country"    />
+        <result property="nationality"    column="nationality"    />
+        <result property="countryBirth"    column="country_birth"    />
+
+        <result property="vqPurposeOfAccount"    column="vq_purpose_of_account" />
+        <result property="vqSourceOfFund"    column="vq_source_of_fund" />
+        <result property="vqEstimatedNetworth"    column="vq_estimate_networth" />
+        <result property="vqSourceOfIncome"    column="vq_source_of_income" />
+        <result property="vqEstimatedAnnualIncome"    column="vq_est_annual_income" />
+        <result property="vqAmountIntendInvest"    column="vq_amount_intend_invest" />
+        <result property="vqEmploymentStatus"    column="vq_employment_status" />
+        <result property="vqJobIndustry"    column="vq_job_industry" />
+
+        <result property="vqSourceOfFundOther"    column="vq_source_of_fund_other" />
+        <result property="vqSourceOfIncomeOther"    column="vq_source_of_income_other" />
+        <result property="vqJobIndustryOther"    column="vq_job_industry_other" />
+
+        <result property="depositCode"    column="deposit_code" />
+
+        <result property="q1"    column="q1" />
+        <result property="a1"    column="a1" />
+        <result property="q2"    column="q2" />
+        <result property="a2"    column="a2" />
+        <result property="q3"    column="q3" />
+        <result property="a3"    column="a3" />
+
+        <result property="type"    column="type" />
+        <result property="kycApplicationId"    column="kyc_application_id" />
+        <result property="kycUserId"    column="kyc_user_id" />
+        <result property="kycUserToken"    column="kyc_user_token" />
+
+        <result property="kycPullTime"    column="kyc_pull_time" />
+        <result property="kycFullName"    column="kyc_full_name" />
+        <result property="kycRegisterTime"    column="kyc_register_time" />
+        <result property="kycNationalId"    column="kyc_national_id" />
+        <result property="kycNationality"    column="kyc_nationality" />
+
+        <result property="riskScore"    column="risk_score" />
+        <result property="riskLevel"    column="risk_level" />
+        <result property="riskScoreTime"    column="risk_score_time" />
+        <result property="slackChannel"    column="slack_channel" />
+
+        <result property="agentUserId"    column="agent_user_id"    />
+
+        <result property="isEmail"    column="is_email" />
+        <result property="isSlack"    column="is_slack" />
+        <result property="addEmail"    column="add_email" />
+
+        <result property="prefLang" column="pref_lang" />
+
+    </resultMap>
+
+    <sql id="selectPmsClientVo">
+        select c.client_id, c.client_name, c.client_type, c.account_number, c.contact_person,
+        c.job_title,  c.address, c.telephone, c.mobile, c.email,
+        c.fax, c.website, c.client_status, c.source_belong_to, c.belong_to,
+        c.aml_risk, c.is_pep, c.vulnerable_status,
+        c.trasfer_date, c.trasfer_to, c.del_flag, c.belong_to_tenant_id, c.create_by,
+        c.create_time, c.update_by,c. update_time, c.remark,
+        c.dob, c.country, c.nationality, c.country_birth,
+       c.vq_purpose_of_account,
+       c.vq_source_of_fund,
+       c.vq_estimate_networth,
+       c.vq_source_of_income,
+       c.vq_est_annual_income,
+       c.vq_amount_intend_invest,
+       c.vq_employment_status,
+       c.vq_job_industry,
+       c.vq_source_of_fund_other,
+       c.vq_source_of_income_other,
+       c.vq_job_industry_other,
+       c.deposit_code,
+       c.q1,c.a1,
+       c.q2,c.a2,
+       c.q3,c.a3,
+       c.type,c.kyc_application_id, c.kyc_user_id, c.kyc_user_token,
+       c.kyc_pull_time,c.kyc_full_name, c.kyc_register_time, c.kyc_national_id, c.kyc_nationality,
+       c.risk_score, c.risk_level, c.risk_score_time, c.slack_channel,c.is_email,c.is_slack,c.add_email,c.pref_lang
+        from pms_client c
+
+    </sql>
+
+    <sql id="selectPmsClientFull">
+        select c.client_id, c.client_name, c.client_type,  c.manage_type, c.account_number, c.contact_person,
+               c.job_title,  c.address, c.telephone, c.mobile, c.email,
+               c.fax, c.website, c.client_status, c.source_belong_to, c.belong_to,
+               c.aml_risk, c.is_pep, c.vulnerable_status,
+               c.trasfer_date, c.trasfer_to, c.del_flag, c.belong_to_tenant_id, c.create_by,
+               c.create_time, c.update_by,c. update_time, c.remark, c.reject_reason,
+               c.dob, c.country, c.nationality, c.country_birth,
+               c.vq_purpose_of_account,
+               c.vq_source_of_fund,
+               c.vq_estimate_networth,
+               c.vq_source_of_income,
+               c.vq_est_annual_income,
+               c.vq_amount_intend_invest,
+               c.vq_employment_status,
+               c.vq_job_industry,
+               c.vq_source_of_fund_other,
+               c.vq_source_of_income_other,
+               c.vq_job_industry_other,
+               c.deposit_code,
+               c.q1,c.a1,
+               c.q2,c.a2,
+               c.q3,c.a3,
+               c.type,c.kyc_application_id, c.kyc_user_id, c.kyc_user_token,
+
+               c.agent_client_id, c.client_name as agent_client_name,
+
+               c.risk_score, c.risk_level, c.risk_score_time, c.risk_data, c.slack_channel,
+               u.user_id as agent_user_id,
+               c.is_email,
+               c.is_slack,
+               c.add_email,
+               c.pref_lang
+
+        from pms_client c
+                 left join sys_user u on u.login_name=c.belong_to
+    </sql>
